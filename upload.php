@@ -5,10 +5,11 @@ include("includes/header.php");
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   $title = trim(filter_input(INPUT_POST, 'title', FILTER_SANITIZE_STRING));
   $description = trim(filter_input(INPUT_POST, 'description', FILTER_SANITIZE_STRING));
-  $data = array("title" => $title, "description" => $description);                                                                    
+  $media_type = $_POST['mediatype'];
+  $data = array("title" => $title, "description" => $description, "mediaType" => $media_type, "likes" => 0);                                                                    
   $data_string = json_encode($data);                                                                                   
                                                                                                                      
-  $ch = curl_init('https://ibm-hackathon-backend.herokuapp.com/api/posts');                                                                      
+  $ch = curl_init('https://ibm-hackathon-backend.herokuapp.com/api/posts/create');                                                                      
   curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");                                                                     
   curl_setopt($ch, CURLOPT_POSTFIELDS, $data_string);                                                                  
   curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);                                                                      
@@ -25,7 +26,7 @@ $result = curl_exec($ch);
   }
 }
 
-$media_type = $_POST['mediatype'];
+
 
 ?>
 
@@ -46,7 +47,7 @@ $media_type = $_POST['mediatype'];
       <div>
         <select name="mediatype" id="mediatype" style="width:150px; height:35px; font-size: 10pt; font-family: 'IBM Plex Sans Condensed', sans-serif;">
           <option value="selectmediatype" disabled selected>Select Media Type...</option>
-          <option value="photo">Photo</option>
+          <option value="photo">Image</option>
           <option value="video">Video</option>
           <option value="text">Text</option>
         </select>
