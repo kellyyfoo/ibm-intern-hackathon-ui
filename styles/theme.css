@@ -96,7 +96,6 @@ a {
   overflow: hidden;
   background-color: white;
   margin-left: 550px;
-  margin-top: 20px;
 }
 
 /* Style the buttons that are used to open the tab content */
@@ -121,14 +120,6 @@ a {
 /* Create an active/current tablink class */
 .active {
   background-color: #ccc;
-}
-
-/* Style the tab content */
-.tabcontent {
-  display: none;
-  padding: 6px 12px;
-  border: 1px solid #ccc;
-  border-top: none;
 }
 
 .logout_button {
