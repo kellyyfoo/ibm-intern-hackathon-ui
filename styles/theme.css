@@ -186,3 +186,60 @@ a {
   margin-left: 230px;
   margin-right: 230px;
 }
+
+/***************** upload page***********************/
+.newpost {
+  text-align: left;
+  margin-top: 30px;
+  margin-left: 60px;
+}
+.uploadtitle {
+text-align: left;
+font-family: 'IBM Plex Sans Condensed', sans-serif;
+color: black;
+font-size: 24px;
+margin-bottom: 20px;
+}
+.secondlinenewpost {
+display: flex;
+flex-direction: row;
+align-items: center;
+margin-top: 20px;
+}
+.items {
+flex: 1;
+padding: 10px;
+}
+.descriptionbox{
+text-align: left;
+font-family: 'IBM Plex Sans Condensed', sans-serif;
+color: black;
+margin-top: 20px;
+}
+.uploadbuttons{
+display: flex;
+flex-direction: row;
+align-items: center;
+margin-top: 20px;
+justify-content: flex-end;
+}
+.cancelbutton{
+padding:9px 60px;
+background:#a2a5ac;
+border:0 none;
+border-radius: 15px;
+cursor:pointer;
+font-family: 'IBM Plex Sans Condensed', sans-serif;
+color: black;
+font-size: 20px;
+}
+.postbutton{
+padding:9px 60px;
+background:#0066ff;
+border:0 none;
+border-radius: 15px;
+cursor:pointer;
+font-family: 'IBM Plex Sans Condensed', sans-serif;
+color: white;
+font-size: 20px;
+}

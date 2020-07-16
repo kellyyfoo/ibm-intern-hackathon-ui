@@ -18,12 +18,15 @@ function changeYourPosts() {
     $your_posts_selected = "active";
 }*/
 
+function display ($post) {
+    $title = $post->title;
+    $description = $post->description;?>
+    <h2> <?php echo $title ?></h2>
+    <p> <?php echo $description ?> </p>
+    <hr>
+<?php } ?>
 
-$data = file_get_contents('https://ibm-hackathon-backend.herokuapp.com/api/posts');
-$decodedData = json_decode($data);
-$title = $decodedData[0]->title;
-$description = $decodedData[0]->description;
-?>
+
 
 
 <!DOCTYPE html>
@@ -31,7 +34,7 @@ $description = $decodedData[0]->description;
 <link rel="stylesheet" type="text/css" href="styles/theme.css" media="all" />
 
 
-<button class="new_post_button" name="new_post_submit"> + New Post </button>
+<button class="new_post_button" onclick="location.href='upload.php'" name="new_post_submit"> + New Post </button>
 
 <img class="user_icon" src="images/user-icon.png" alt="User Icon"> 
 
@@ -47,9 +50,15 @@ $description = $decodedData[0]->description;
     </div>
 
     <div class="issues_box">
-        <h2> <?php echo $title ?></h2>
-        <p> <?php echo $description ?> </p>
-        <hr>
+        <?php
+        $data = file_get_contents('https://ibm-hackathon-backend.herokuapp.com/api/posts');
+        $decodedData = json_decode($data);
+        //$title = $decodedData[0]->title;
+        //$description = $decodedData[0]->description;
+        foreach ($decodedData as $obj) {
+            display($obj);
+        }
+        ?>
     </div> 
 </div>
 

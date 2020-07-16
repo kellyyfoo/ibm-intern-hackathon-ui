@@ -55,7 +55,7 @@ function httpPost($url, $data){
 
           <div class="group_label_input">
             <label class="form_title" for="password"> Password: </label>
-            <input class = "password_input_text" id="password" type="text" name="password"  />
+            <input class = "password_input_text" id="password" type="password" name="password"  />
           </div>
 
           <div class="group_label_button">
