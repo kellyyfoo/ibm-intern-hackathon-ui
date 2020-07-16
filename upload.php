@@ -3,11 +3,11 @@ include("includes/init.php");
 include("includes/header.php"); 
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-  $title = trim(filter_input(INPUT_POST, 'title', FILTER_SANITIZE_STRING));
+  /*$title = trim(filter_input(INPUT_POST, 'title', FILTER_SANITIZE_STRING));
   $description = trim(filter_input(INPUT_POST, 'description', FILTER_SANITIZE_STRING));
   $media_type = $_POST['mediatype'];
-  $url = trim(filter_input(INPUT_POST, 'mediaurl', FILTER_SANITIZE_STRING));
-  $data = array("title" => $title, "description" => $description, "mediaType" => $media_type, "likes" => 0, "media" => $url);                                                                    
+  $url = trim(filter_input(INPUT_POST, 'mediaurl', FILTER_SANITIZE_STRING));*/
+  $data = array("title" => "post 4", "description" => "This is a new post", "mediaType" => "Image", "likes" => 0, "media" => "https://thumbs.dreamstime.com/b/inspirational-quotes-dream-wish-do-154050314.jpg");                                                                    
   $data_string = json_encode($data);                                                                                   
                                                                                                                      
   $ch = curl_init('https://ibm-hackathon-backend.herokuapp.com/api/posts/create');                                                                      
@@ -20,7 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 );                                                                                                                   
                                                                                                                      
 $result = curl_exec($ch);
-  if (is_null($result)) { echo "failed upload"; /* Handle error */ }
+  if (is_null($result)) { echo "failed upload"; header("Location: upload.php") ;/* Handle error */ }
   else{
     echo "here";
     header("Location: home.php") ;

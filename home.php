@@ -13,10 +13,11 @@ function display ($post) {
     <?php if ($media_type == "Image") { ?>
         <img class="media" src="<?php echo $url?>" alt="Media">
     <?php } elseif ($media_type == "video") { ?>
-        <iframe class = "media" src="<?php echo $url?>"></iframe>
+        <iframe class="media" src="https://www.youtube.com/embed/NUK8eRaZId4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     <?php }
     else { ?>
         <img class="media" src="images/imageplaceholder.jpg" alt="Media">
+        
     <?php }?>
     <h2> <?php echo $title ?></h2>
     <p> <?php echo $description ?> </p>
