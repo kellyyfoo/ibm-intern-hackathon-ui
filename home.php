@@ -5,10 +5,19 @@ include("includes/header.php");
 function display ($post) {
     $title = $post->title;
     $description = $post->description;
-    $likes = $post->likes?>
+    $media_type = $post->mediaType;
+    $likes = $post->likes;
+    $url = $post->media?>
     <div class = "post_box">
-    <!-- <img class="media" src="images/imageplaceholder.jpg" alt="Media"> -->
-    <iframe class = "media" src="https://www.youtube.com/embed/tgbNymZ7vqY"></iframe>
+    <!--  -->
+    <?php if ($media_type == "Image") { ?>
+        <img class="media" src="<?php echo $url?>" alt="Media">
+    <?php } elseif ($media_type == "Video") { ?>
+        <iframe class = "media" src="<?php echo $url?>"></iframe>
+    <?php }
+    else { ?>
+        <img class="media" src="images/imageplaceholder.jpg" alt="Media">
+    <?php }?>
     <h2> <?php echo $title ?></h2>
     <p> <?php echo $description ?> </p>
     <img class="heart" src="images/heart.png" alt="Heart"> 

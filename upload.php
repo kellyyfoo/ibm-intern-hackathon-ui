@@ -6,7 +6,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   $title = trim(filter_input(INPUT_POST, 'title', FILTER_SANITIZE_STRING));
   $description = trim(filter_input(INPUT_POST, 'description', FILTER_SANITIZE_STRING));
   $media_type = $_POST['mediatype'];
-  $data = array("title" => $title, "description" => $description, "mediaType" => $media_type, "likes" => 0);                                                                    
+  $url = trim(filter_input(INPUT_POST, 'mediaurl', FILTER_SANITIZE_STRING));
+  $data = array("title" => $title, "description" => $description, "mediaType" => $media_type, "likes" => 0, "media" => $url);                                                                    
   $data_string = json_encode($data);                                                                                   
                                                                                                                      
   $ch = curl_init('https://ibm-hackathon-backend.herokuapp.com/api/posts/create');                                                                      
@@ -47,14 +48,14 @@ $result = curl_exec($ch);
       <div>
         <select name="mediatype" id="mediatype" style="width:150px; height:35px; font-size: 10pt; font-family: 'IBM Plex Sans Condensed', sans-serif;">
           <option value="selectmediatype" disabled selected>Select Media Type...</option>
-          <option value="photo">Image</option>
-          <option value="video">Video</option>
-          <option value="text">Text</option>
+          <option value="Image">Image</option>
+          <option value="Video">Video</option>
+          <option value="Text">Text</option>
         </select>
       </div>
 
       <div class=items>
-        <input name="browse" type="file" value="Browse"/>
+      <input type="text"  id="mediaurl" name="mediaurl" placeholder="Put URL here..." style="width: 640px; height: 35px; font-size: 12pt; font-family: 'IBM Plex Sans Condensed', sans-serif;"/>
       </div>
     </div>
 
