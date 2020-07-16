@@ -24,10 +24,6 @@ $result = curl_exec($ch);
     header("Location: home.php") ;
   }
 
-    header("Location: home.php") ;
-    $response = httpPost("https://frozen-badlands-71872.herokuapp.com/api/login",
-    array("username"=>"sujil","password"=>"sujil"));
-    var_dump($response);
 
 }
 
