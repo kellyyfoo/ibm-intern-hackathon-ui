@@ -114,6 +114,25 @@ a {
   border-top: none;
 }
 
+.logout_button {
+  width: 80px;
+  height: 30px;
+  border: 1px solid white;
+  border-radius: 15px;
+  margin-top: 6px;
+  margin-left: 60px;
+  background: lightgray;
+  text-align: center;
+  color: black;
+  cursor: pointer;
+  font-family: 'IBM Plex Sans Condensed', sans-serif;
+  font-size: 12px;
+}
+
+.new_post_button:hover {
+  background-color: gray;
+}
+
 .new_post_button {
   width: 100px;
   height: 45px;
@@ -138,5 +157,4 @@ a {
   width: 1px;
   padding: 470px;
   margin-left: 230px;
-
 }

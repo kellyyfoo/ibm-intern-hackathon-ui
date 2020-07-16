@@ -7,9 +7,9 @@ include("includes/header.php"); ?>
 <html lang="en">
 <link rel="stylesheet" type="text/css" href="styles/theme.css" media="all" />
 
-
-
 <button class="new_post_button" name="new_post_submit"> + New Post </button>
+
+<button class="logout_button" name="logout_submit"> Logout </button>
 
 <!-- Tab links -->
 <div class="center">
