@@ -1,0 +1,142 @@
+body{
+  background-color: white;
+}
+
+h1{
+  font-family: 'IBM Plex Sans Condensed', sans-serif;
+  color:white;
+  font-size: 60px;
+  text-align: center;
+  font-weight: bold;
+}
+
+header{
+  padding: 2px;
+  text-align: center;
+  background: #0066ff;
+}
+
+.login {
+  text-align: center;
+  margin-top: 50px;
+}
+form {
+  display: inline-block;
+}
+
+.form_title {
+  font-family: 'IBM Plex Sans Condensed', sans-serif;
+  color: black;
+  font-size: 24px;
+  margin-right: 8px;
+}
+
+.group_label_input {
+  display: flex;
+  flex-direction: row;
+  align-items: left;
+  padding: 10px;
+}
+
+.password_input_text{
+  margin-left: 6px;
+}
+
+.group_label_button {
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+  margin-left: 115px;
+}
+
+
+/****************** login button ********************/
+input[type=submit]{
+  padding:9px 60px;
+  background:#0066ff;
+  border:0 none;
+  border-radius: 5px;
+  cursor:pointer;
+  font-family: 'IBM Plex Sans Condensed', sans-serif;
+  color: white;
+  font-size: 12px;
+}
+
+input[type=submit]:hover {
+  background-color: gray;
+  }
+
+a {
+  margin-left: 115px;
+  font-family: 'IBM Plex Sans Condensed', sans-serif;
+  font-size: 12px;
+}
+
+
+/***************** home page ***********************/
+/* Style the tab */
+.tab {
+  overflow: hidden;
+  background-color: white;
+  margin-left: 550px;
+  margin-top: 20px;
+}
+
+/* Style the buttons that are used to open the tab content */
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: 1px solid black;
+  outline: none;
+  cursor: pointer;
+  padding: 7px 14px;
+  transition: 0.3s;
+  font-family: 'IBM Plex Sans Condensed', sans-serif;
+  border-top-right-radius: 12px;
+  border-top-left-radius: 12px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+}
+
+.new_post_button {
+  width: 100px;
+  height: 45px;
+  border: 1px solid white;
+  border-radius: 15px;
+  margin-top: 6px;
+  margin-left: 60px;
+  background: #0066ff;
+  text-align: center;
+  color: white;
+  cursor: pointer;
+  font-family: 'IBM Plex Sans Condensed', sans-serif;
+  font-size: 14px;
+}
+
+.new_post_button:hover {
+  background-color: gray;
+}
+
+.issues_box {
+  background-color: #f2f2f2;
+  width: 1px;
+  padding: 470px;
+  margin-left: 230px;
+
+}
