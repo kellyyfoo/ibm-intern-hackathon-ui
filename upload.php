@@ -49,7 +49,7 @@ $result = curl_exec($ch);
         <select name="mediatype" id="mediatype" style="width:150px; height:35px; font-size: 10pt; font-family: 'IBM Plex Sans Condensed', sans-serif;">
           <option value="selectmediatype" disabled selected>Select Media Type...</option>
           <option value="Image">Image</option>
-          <option value="Video">Video</option>
+          <option value="video">Video</option>
           <option value="Text">Text</option>
         </select>
       </div>

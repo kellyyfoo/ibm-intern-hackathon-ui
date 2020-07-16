@@ -12,7 +12,7 @@ function display ($post) {
     <!--  -->
     <?php if ($media_type == "Image") { ?>
         <img class="media" src="<?php echo $url?>" alt="Media">
-    <?php } elseif ($media_type == "Video") { ?>
+    <?php } elseif ($media_type == "video") { ?>
         <iframe class = "media" src="<?php echo $url?>"></iframe>
     <?php }
     else { ?>
