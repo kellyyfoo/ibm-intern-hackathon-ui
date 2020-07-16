@@ -4,7 +4,7 @@ include("includes/header.php");
 
 
 if (isset($_POST["submit_login"])) {
-    //header("Location: home.php") ;
+    header("Location: home.php") ;
     $response = httpPost("https://frozen-badlands-71872.herokuapp.com/api/login",
     array("username"=>"sujil","password"=>"sujil"));
     var_dump($response);

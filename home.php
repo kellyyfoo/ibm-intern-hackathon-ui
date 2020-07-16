@@ -2,14 +2,27 @@
 include("includes/init.php"); 
 include("includes/header.php"); 
 
-$latest_selected = "";
-$popular_selected = "";
-$priority_selected = "";
-$your_posts_selected = "";
 
 /*function changeLatest() {
-    $latest_selected = 
+    $latest_selected = "active";
+    echo $latest_selected;
+    var_dump($latest_selected);
+}
+function changePopular() {
+    $popular_selected = "active";
+}
+function changePriority() {
+    $priority_selected = "active";
+}
+function changeYourPosts() {
+    $your_posts_selected = "active";
 }*/
+
+
+$data = file_get_contents('https://ibm-hackathon-backend.herokuapp.com/api/posts');
+$decodedData = json_decode($data);
+$title = $decodedData[0]->title;
+$description = $decodedData[0]->description;
 ?>
 
 
@@ -17,13 +30,14 @@ $your_posts_selected = "";
 <html lang="en">
 <link rel="stylesheet" type="text/css" href="styles/theme.css" media="all" />
 
+
 <button class="new_post_button" name="new_post_submit"> + New Post </button>
 
 <img class="user_icon" src="images/user-icon.png" alt="User Icon"> 
 
 <button class="logout_button" onclick="location.href='login.php'"name="logout_submit"> Logout </button>
 
-<!-- Tab links -->
+
 <div class="center">
     <div class="tab">
         <button class="<?php echo $latest_selected ?>" onclick="changeLatest()">Latest</button>
@@ -32,8 +46,13 @@ $your_posts_selected = "";
         <button class="<?php echo $your_posts_selected ?>" onclick="changeYourPosts()">Your Posts</button>
     </div>
 
-    <div class="issues_box"></div>
+    <div class="issues_box">
+        <h2> <?php echo $title ?></h2>
+        <p> <?php echo $description ?> </p>
+        <hr>
+    </div> 
 </div>
+
 
 
 </html>
