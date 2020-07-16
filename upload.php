@@ -25,6 +25,8 @@ $result = curl_exec($ch);
   }
 }
 
+$media_type = $_POST['mediatype'];
+
 ?>
 
 <!DOCTYPE html>

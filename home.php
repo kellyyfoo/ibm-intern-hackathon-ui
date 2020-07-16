@@ -7,7 +7,8 @@ function display ($post) {
     $description = $post->description;
     $likes = $post->likes?>
     <div class = "post_box">
-    <img class="image_placeholder" src="images/imageplaceholder.jpg" alt="Media"> 
+    <!-- <img class="media" src="images/imageplaceholder.jpg" alt="Media"> -->
+    <iframe class = "media" src="https://www.youtube.com/embed/tgbNymZ7vqY"></iframe>
     <h2> <?php echo $title ?></h2>
     <p> <?php echo $description ?> </p>
     <img class="heart" src="images/heart.png" alt="Heart"> 
