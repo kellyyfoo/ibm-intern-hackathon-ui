@@ -4,12 +4,14 @@ include("includes/header.php");
 
 function display ($post) {
     $title = $post->title;
-    $description = $post->description;?>
+    $description = $post->description;
+    $likes = $post->likes?>
     <div class = "post_box">
     <img class="image_placeholder" src="images/imageplaceholder.jpg" alt="Media"> 
     <h2> <?php echo $title ?></h2>
     <p> <?php echo $description ?> </p>
     <img class="heart" src="images/heart.png" alt="Heart"> 
+    <p class = "likes"> <?php echo $likes ?> </p>
     </div>
 <?php } ?>
 

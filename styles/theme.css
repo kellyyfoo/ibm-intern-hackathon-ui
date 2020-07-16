@@ -199,9 +199,15 @@ a {
 
 .heart {
   margin-top: -30px;
-  margin-left: 830px;
+  margin-left: 805px;
   margin-right: 10px;
   height: 20px;
+}
+
+.likes {
+  margin-top: -30px;
+  margin-left: 830px;
+  margin-right: 10px;
 }
 
 /***************** upload page***********************/
