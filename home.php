@@ -5,11 +5,12 @@ include("includes/header.php");
 function display ($post) {
     $title = $post->title;
     $description = $post->description;?>
+    <div class = "post_box">
     <img class="image_placeholder" src="images/imageplaceholder.jpg" alt="Media"> 
     <h2> <?php echo $title ?></h2>
     <p> <?php echo $description ?> </p>
     <img class="heart" src="images/heart.png" alt="Heart"> 
-    <hr>
+    </div>
 <?php } ?>
 
 
@@ -36,7 +37,7 @@ function display ($post) {
     </div>
 
     <div class="issues_box">
-        <div class = "post_box">
+        <!-- <div class = "post_box"> -->
         <?php
         $data = file_get_contents('https://ibm-hackathon-backend.herokuapp.com/api/posts');
         $decodedData = json_decode($data);
@@ -46,7 +47,7 @@ function display ($post) {
             display($obj);
         }
         ?>
-        </div>
+        <!-- </div>-->
     </div> 
 </div>
 
