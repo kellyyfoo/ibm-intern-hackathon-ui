@@ -4,10 +4,31 @@ include("includes/header.php");
 
 
 if (isset($_POST["submit_login"])) {
+
+  $data = array("username" => "sujil", "password" => "sujil");                                                                    
+  $data_string = json_encode($data);                                                                                   
+                                                                                                                     
+  $ch = curl_init('https://frozen-badlands-71872.herokuapp.com/api/login');                                                                      
+  curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");                                                                     
+  curl_setopt($ch, CURLOPT_POSTFIELDS, $data_string);                                                                  
+  curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);                                                                      
+  curl_setopt($ch, CURLOPT_HTTPHEADER, array(                                                                          
+    'Content-Type: application/json',                                                                                
+    'Content-Length: ' . strlen($data_string))                                                                       
+);                                                                                                                   
+                                                                                                                     
+$result = curl_exec($ch);
+  if (is_null($result)) { echo "falied login"; /* Handle error */ }
+  else{
+    echo "here";
+    header("Location: home.php") ;
+  }
+
     header("Location: home.php") ;
     $response = httpPost("https://frozen-badlands-71872.herokuapp.com/api/login",
     array("username"=>"sujil","password"=>"sujil"));
     var_dump($response);
+
 }
 
 function httpPost($url, $data){
