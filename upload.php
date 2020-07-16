@@ -1,6 +1,31 @@
 <?php 
 include("includes/init.php"); 
-include("includes/header.php"); ?>
+include("includes/header.php"); 
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+  $title = trim(filter_input(INPUT_POST, 'title', FILTER_SANITIZE_STRING));
+  $description = trim(filter_input(INPUT_POST, 'description', FILTER_SANITIZE_STRING));
+  $data = array("title" => $title, "description" => $description);                                                                    
+  $data_string = json_encode($data);                                                                                   
+                                                                                                                     
+  $ch = curl_init('https://ibm-hackathon-backend.herokuapp.com/api/posts');                                                                      
+  curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");                                                                     
+  curl_setopt($ch, CURLOPT_POSTFIELDS, $data_string);                                                                  
+  curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);                                                                      
+  curl_setopt($ch, CURLOPT_HTTPHEADER, array(                                                                          
+    'Content-Type: application/json',                                                                                
+    'Content-Length: ' . strlen($data_string))                                                                       
+);                                                                                                                   
+                                                                                                                     
+$result = curl_exec($ch);
+  if (is_null($result)) { echo "failed upload"; /* Handle error */ }
+  else{
+    echo "here";
+    header("Location: home.php") ;
+  }
+}
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">

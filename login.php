@@ -64,7 +64,7 @@ function httpPost($url, $data){
           </div>
 
           <div class="group_label_input">
-            <a href="url">Forgot password</a>
+            <a href="https://w3idprofile.sso.ibm.com/password/createpwd_lookup_otp.wss">Forgot password</a>
           </div>
         </form>
     

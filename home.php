@@ -2,25 +2,10 @@
 include("includes/init.php"); 
 include("includes/header.php"); 
 
-
-/*function changeLatest() {
-    $latest_selected = "active";
-    echo $latest_selected;
-    var_dump($latest_selected);
-}
-function changePopular() {
-    $popular_selected = "active";
-}
-function changePriority() {
-    $priority_selected = "active";
-}
-function changeYourPosts() {
-    $your_posts_selected = "active";
-}*/
-
 function display ($post) {
     $title = $post->title;
     $description = $post->description;?>
+    <img class="image_placeholder" src="images/imageplaceholder.jpg" alt="Media"> 
     <h2> <?php echo $title ?></h2>
     <p> <?php echo $description ?> </p>
     <hr>
