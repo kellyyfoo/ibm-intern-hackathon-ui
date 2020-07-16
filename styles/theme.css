@@ -172,6 +172,7 @@ a {
 
 .issues_box {
   background-color: #f2f2f2;
+  border: 1px solid black;
   /*width: 1px;*/
   /*padding: 470px;*/
   margin-left: 230px;
