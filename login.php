@@ -4,7 +4,22 @@ include("includes/header.php");
 
 
 if (isset($_POST["submit_login"])) {
-    header("Location: home.php") ;
+    //header("Location: home.php") ;
+    $response = httpPost("https://frozen-badlands-71872.herokuapp.com/api/login",
+    array("username"=>"sujil","password"=>"sujil"));
+    var_dump($response);
+}
+
+function httpPost($url, $data){
+	$options = array(
+		'http' => array(
+     		'header'  => "Content-type: application/x-www-form-urlencoded\r\n",
+        	'method'  => 'POST',
+        	'content' => http_build_query($data)
+    	)
+    );
+	$context  = stream_context_create($options);
+	return file_get_contents($url, false, $context);
 }
 
 ?>

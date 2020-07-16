@@ -7,6 +7,9 @@ $popular_selected = "";
 $priority_selected = "";
 $your_posts_selected = "";
 
+/*function changeLatest() {
+    $latest_selected = 
+}*/
 ?>
 
 
@@ -16,7 +19,7 @@ $your_posts_selected = "";
 
 <button class="new_post_button" name="new_post_submit"> + New Post </button>
 
-<img class="user_icon" src="images/user-icon.png" alt="Italian Trulli"> 
+<img class="user_icon" src="images/user-icon.png" alt="User Icon"> 
 
 <button class="logout_button" onclick="location.href='login.php'"name="logout_submit"> Logout </button>
 
