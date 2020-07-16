@@ -10,6 +10,23 @@ h1{
   font-weight: bold;
 }
 
+h2{
+  font-family: 'IBM Plex Sans Condensed', sans-serif;
+  color:black;
+  font-size: 26px;
+  text-align: left;
+  margin-left: 300px;
+}
+p{
+  font-family: 'IBM Plex Sans Condensed', sans-serif;
+  color:black;
+  font-size: 16px;
+  text-align: left;
+  margin-left: 300px;
+  margin-right: 40px;
+  margin-bottom: 40px;
+}
+
 header{
   padding: 2px;
   text-align: center;
@@ -102,7 +119,7 @@ a {
 }
 
 /* Create an active/current tablink class */
-.tab button.active {
+.active {
   background-color: #ccc;
 }
 
@@ -164,7 +181,8 @@ a {
 
 .issues_box {
   background-color: #f2f2f2;
-  width: 1px;
-  padding: 470px;
+  /*width: 1px;*/
+  /*padding: 470px;*/
   margin-left: 230px;
+  margin-right: 230px;
 }
