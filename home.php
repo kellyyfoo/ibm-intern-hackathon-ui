@@ -1,6 +1,13 @@
 <?php 
 include("includes/init.php"); 
-include("includes/header.php"); ?>
+include("includes/header.php"); 
+
+$latest_selected = "";
+$popular_selected = "";
+$priority_selected = "";
+$your_posts_selected = "";
+
+?>
 
 
 <!DOCTYPE html>
@@ -9,15 +16,17 @@ include("includes/header.php"); ?>
 
 <button class="new_post_button" name="new_post_submit"> + New Post </button>
 
-<button class="logout_button" name="logout_submit"> Logout </button>
+<img class="user_icon" src="images/user-icon.png" alt="Italian Trulli"> 
+
+<button class="logout_button" onclick="location.href='login.php'"name="logout_submit"> Logout </button>
 
 <!-- Tab links -->
 <div class="center">
     <div class="tab">
-        <button class="tablinks" onclick="openCity(event, 'Latest')">Latest</button>
-        <button class="tablinks" onclick="openCity(event, 'Most Popular')">Most Popular</button>
-        <button class="tablinks" onclick="openCity(event, 'Priority')">Priority</button>
-        <button class="tablinks" onclick="openCity(event, 'Your Posts')">Your Posts</button>
+        <button class="<?php echo $latest_selected ?>" onclick="changeLatest()">Latest</button>
+        <button class="<?php echo $popular_selected ?>" onclick="changePopular()">Most Popular</button>
+        <button class="<?php echo $priority_selected ?>" onclick="changePriority()">Priority</button>
+        <button class="<?php echo $your_posts_selected ?>" onclick="changeYourPosts()">Your Posts</button>
     </div>
 
     <div class="issues_box"></div>

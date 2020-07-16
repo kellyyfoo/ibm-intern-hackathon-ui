@@ -115,18 +115,29 @@ a {
 }
 
 .logout_button {
-  width: 80px;
-  height: 30px;
-  border: 1px solid white;
+  width: 60px;
+  height: 25px;
+  border: 1px solid black;
   border-radius: 15px;
-  margin-top: 6px;
-  margin-left: 60px;
+  margin-top: -50px;
+  margin-left: 10px;
   background: lightgray;
   text-align: center;
   color: black;
   cursor: pointer;
   font-family: 'IBM Plex Sans Condensed', sans-serif;
   font-size: 12px;
+}
+
+.logout_button:hover {
+  background-color: darkgray;
+}
+
+.user_icon {
+  width: 30px;
+  height: 30px;
+  margin-top: 6px;
+  margin-left: 1100px;
 }
 
 .new_post_button:hover {
@@ -138,7 +149,6 @@ a {
   height: 45px;
   border: 1px solid white;
   border-radius: 15px;
-  margin-top: 6px;
   margin-left: 60px;
   background: #0066ff;
   text-align: center;
